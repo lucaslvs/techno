@@ -2,6 +2,7 @@ const vm = new Vue({
   el: "#app",
   data: () => ({
     products: [],
+    product: false,
   }),
   filters: {
     currencyMoney(value) {
@@ -15,6 +16,13 @@ const vm = new Vue({
         .then(products => {
           this.products = products;
         });
+    },
+    fetchProduct(id) {
+      fetch(`./api/produtos/${id}/dados.json`)
+      .then(response => response.json())
+      .then(product => {
+        this.product = product;
+      });
     },
   },
   created() {
