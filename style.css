@@ -44,11 +44,15 @@ body {
   max-width: 300px;
 }
 
-.products__product__info-title {
+.products__product__info__title {
   font-size: 3rem;
   line-height: 1;
 }
 
-.products__product__info-price {
+.products__product__info__price {
   color: rgba(0, 0, 0, .5);
+}
+
+.modal {
+  background-color: 
 }

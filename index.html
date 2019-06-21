@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +11,43 @@
 </head>
 
 <body>
-
   <div id="app">
-    <section class="modal">
-      {{ product }}
+    <section class="modal" v-if="product">
+      <div class="modal__card">
+        <div class="modal__card__image">
+          <img :src="product.img" :alt="product.nome" />
+        </div>
+
+        <div class="modal__card__detail">
+          <span class="modal__card__detail__price">
+            {{ product.preco | currencyMoney }}
+          </span>
+          <h2 class="modal__card__detail__title">
+            {{ product.nome }}
+          <h2>
+          <p class="modal__card__detail__description">
+            {{ product.descricao }}
+          </p>
+          <button class="modal__card__detail__add-item">Adicionar Item</button>
+        </div>
+
+        <div class="modal__card__reviews">
+          <h2 class="modal__card__reviews-title">Avaliações</h2>
+          <ul class="modal__card__reviews__list">
+            <li 
+              class="modal__card__reviews__list__list-item"
+              v-for="review in product.reviews"
+            >
+              <p class="modal__card__reviews__list__list-item__description">
+                {{ review.descricao }}
+              </p>
+              <p class="modal__card__reviews__list__list-item__user-score">
+                {{ review.nome }} | {{ review.estrelas }} estrelas
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="products">
@@ -25,12 +57,18 @@
         :key="product.id"
         @click="fetchProduct(product.id)"
       >
-        <img class="products__product__image" :src="product.img" :alt="product.nome">
+        <img 
+          class="products__product__image"
+          :src="product.img"
+          :alt="product.nome"
+        />
+
         <div class="products__product__info">
-          <span class="products__product__info-price">
+          <span class="products__product__info__price">
             {{ product.preco | currencyMoney }}
           </span>
-          <h2 class="products__product__info-title">
+
+          <h2 class="products__product__info__title">
             {{ product.nome }}
           </h2>
         </div>

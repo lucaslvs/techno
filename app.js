@@ -2,7 +2,7 @@ const vm = new Vue({
   el: "#app",
   data: () => ({
     products: [],
-    product: false,
+    product: null,
   }),
   filters: {
     currencyMoney(value) {
