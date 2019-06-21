@@ -1,4 +1,4 @@
-body, h1, h2, ul, li {
+body, h1, h2, ul, li, p {
   padding: 0;
   margin: 0;
 }
@@ -32,7 +32,7 @@ body {
 
 .products__product {
   align-items: center;
-  background-color: #fff;
+  background: #fff;
   box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
   cursor: pointer;
   display: flex;
@@ -53,6 +53,102 @@ body {
   color: rgba(0, 0, 0, .5);
 }
 
+.modal::before {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;  
+}
+
 .modal {
-  background-color: 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-top: 80px;
+  padding-right: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  widows: 100%;
+}
+
+.modal__card {
+  align-items: end;
+  background: linear-gradient(to right, transparent 250px, #fff 250px);
+  display: grid;
+  grid-gap: 50px;
+  padding-bottom: 50px;
+  padding-left: 0;
+  padding-top: 0;
+  padding-right: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.modal__card__image-wrapper {
+  grid-column: 1;
+  margin-top: 50px;
+}
+
+.modal__card__image-wrapper__image {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, .1), 0 4px 10px rgba(0, 0, 0, .1);
+  display: block;
+  max-width: 300px;
+}
+
+.modal__card__detail {
+  max-width: 600px;
+  grid-column: 2;
+}
+
+.modal__card__detail__title {
+  font-size: 3rem;
+}
+
+.modal__card__detail__add-button {
+  background: #000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Noto Serif";
+  font-size: 1rem;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-right: 25px;
+  margin-top: 80px;
+}
+
+.modal__card__detail__add-button:active {
+  background: #808080;
+}
+
+.modal__card__reviews {
+  grid-column: 2;
+}
+
+.modal__card__reviews-title {
+  font-size: 1.75rem;
+}
+
+.modal__card__reviews__list__list-item {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding-bottom: 20px;
+}
+
+.modal__card__reviews__list__list-item__description {
+  color: rgba(0, 0, 0, .7);
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-top: 20px;
+  margin-right: 0;
+}
+
+.modal__card__reviews__list__list-item__user-score {
+  font-weight: 600;
 }

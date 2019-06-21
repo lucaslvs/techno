@@ -14,25 +14,33 @@
   <div id="app">
     <section class="modal" v-if="product">
       <div class="modal__card">
-        <div class="modal__card__image">
-          <img :src="product.img" :alt="product.nome" />
+        <div class="modal__card__image-wrapper">
+          <img 
+            class="modal__card__image-wrapper__image"
+            :src="product.img" 
+            :alt="product.nome" 
+          />
         </div>
 
         <div class="modal__card__detail">
           <span class="modal__card__detail__price">
             {{ product.preco | currencyMoney }}
           </span>
+
           <h2 class="modal__card__detail__title">
             {{ product.nome }}
           <h2>
+
           <p class="modal__card__detail__description">
             {{ product.descricao }}
           </p>
-          <button class="modal__card__detail__add-item">Adicionar Item</button>
+
+          <button class="modal__card__detail__add-button">Adicionar Item</button>
         </div>
 
         <div class="modal__card__reviews">
           <h2 class="modal__card__reviews-title">Avaliações</h2>
+
           <ul class="modal__card__reviews__list">
             <li 
               class="modal__card__reviews__list__list-item"
@@ -41,6 +49,7 @@
               <p class="modal__card__reviews__list__list-item__description">
                 {{ review.descricao }}
               </p>
+
               <p class="modal__card__reviews__list__list-item__user-score">
                 {{ review.nome }} | {{ review.estrelas }} estrelas
               </p>
