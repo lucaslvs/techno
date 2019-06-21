@@ -23,7 +23,7 @@
         <img class="products__product__image" :src="product.img" :alt="product.nome">
         <div class="products__product__info">
           <span class="products__product__info-price">
-            {{ product.preco }}
+            {{ product.preco | currencyMoney }}
           </span>
           <h2 class="products__product__info-title">
             {{ product.nome }}
